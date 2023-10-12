@@ -1,0 +1,19 @@
+{
+  "name": "qr-code-hunt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artikaShrivastava/QR-CODE-HUNT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artikaShrivastava/QR-CODE-HUNT/issues"
+  },
+  "homepage": "https://github.com/artikaShrivastava/QR-CODE-HUNT#readme"
+}
