@@ -1,25 +1,72 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { useState } from 'react'
 
-function App() {
+
+
+const data=
+[
+  [
+    "111111",
+    "222222",
+    "333333",
+    "444444",
+  ],
+  [
+    "123456",
+    "234567",
+    "345678",
+    "456789",
+  ]
+]
+let teamIds=[
+  "1001",
+  "1002"
+]
+const App = () => {
+  const [teamId, setTeamId] = useState('')
+  const [password, setPassword] = useState('')
+  const [qrNum, setQrNum] = useState(0)
+  const clickHandler=()=>{
+    if(teamId===''||password===''){
+      alert('Please enter teamid and password')
+      return
+    }
+    // let idx=
+    if(data[(parseInt(teamId)%1000)/10][qrNum-1]===password){
+      alert("correct");
+    }else{
+      alert('Wrong password')
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='bg-gray-200 min-h-screen'>
+    <div >
+      <input placeholder='teamid' onChange={
+        (e) => {
+          setTeamId(e.target.value)
+        }
+
+      } />
+      <input placeholder='password' onChange={
+        (e) => {
+          setPassword(e.target.value)
+        }
+
+      }  />
+      <input placeholder='qrNum' onChange={
+        (e) => {
+          setQrNum(e.target.value)
+        }
+
+      }  />
+      <button onClick={
+        clickHandler
+      }>
+        Get Hint
+      </button>
     </div>
-  );
+    </div>
+  )
 }
 
-export default App;
+export default App
